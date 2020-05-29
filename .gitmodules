@@ -11,7 +11,7 @@
 	status = addon
 [submodule "qtdeclarative"]
 	depends = qtbase
-	recommends = qtsvg qtxmlpatterns
+	recommends = qtsvg
 	path = qtdeclarative
 	url = ../qtdeclarative.git
 	branch = dev
@@ -21,21 +21,14 @@
 	path = qtactiveqt
 	url = ../qtactiveqt.git
 	branch = dev
-	status = addon
-[submodule "qtscript"]
-	depends = qtbase
-	recommends = qttools
-	path = qtscript
-	url = ../qtscript.git
-	branch = dev
-	status = deprecated
+	status = ignore
 [submodule "qtmultimedia"]
 	depends = qtbase
 	recommends = qtdeclarative
 	path = qtmultimedia
 	url = ../qtmultimedia.git
 	branch = dev
-	status = essential
+	status = ignore
 [submodule "qttools"]
 	depends = qtbase
 	recommends = qtdeclarative qtactiveqt
@@ -45,10 +38,11 @@
 	status = essential
 [submodule "qtxmlpatterns"]
 	depends = qtbase
+	recommends = qtdeclarative
 	path = qtxmlpatterns
 	url = ../qtxmlpatterns.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qttranslations"]
 	depends = qttools
 	path = qttranslations
@@ -57,7 +51,8 @@
 	status = essential
 	priority = 30
 [submodule "qtdoc"]
-	depends = qtdeclarative
+	depends = qtdeclarative qttools
+	recommends = qtmultimedia qtquickcontrols qtquickcontrols2
 	path = qtdoc
 	url = ../qtdoc.git
 	branch = dev
@@ -82,14 +77,14 @@
 	path = qtlocation
 	url = ../qtlocation.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtsensors"]
 	depends = qtbase
 	recommends = qtdeclarative
 	path = qtsensors
 	url = ../qtsensors.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtsystems"]
 	depends = qtbase
 	recommends = qtdeclarative
@@ -122,7 +117,7 @@
 	path = qtconnectivity
 	url = ../qtconnectivity.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtwayland"]
 	depends = qtbase
 	recommends = qtdeclarative
@@ -136,76 +131,64 @@
 	path = qt3d
 	url = ../qt3d.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtimageformats"]
 	depends = qtbase
 	path = qtimageformats
 	url = ../qtimageformats.git
 	branch = dev
 	status = addon
-[submodule "qtquick1"]
-	depends = qtscript
-	recommends = qtsvg qtxmlpatterns
-	path = qtquick1
-	url = ../qtquick1.git
-	branch = dev
-	status = ignore
 [submodule "qtgraphicaleffects"]
 	depends = qtdeclarative
 	path = qtgraphicaleffects
 	url = ../qtgraphicaleffects.git
 	branch = dev
-	status = addon
+	status = essential
 [submodule "qtquickcontrols"]
 	depends = qtdeclarative
 	recommends = qtgraphicaleffects
 	path = qtquickcontrols
 	url = ../qtquickcontrols.git
 	branch = dev
-	status = essential
+	status = ignore
 [submodule "qtserialbus"]
-	depends = qtserialport
+	depends = qtbase
+	recommends = qtserialport
 	path = qtserialbus
 	url = ../qtserialbus.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtserialport"]
 	depends = qtbase
 	path = qtserialport
 	url = ../qtserialport.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtx11extras"]
 	depends = qtbase
 	path = qtx11extras
 	url = ../qtx11extras.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtmacextras"]
 	depends = qtbase
 	path = qtmacextras
 	url = ../qtmacextras.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtwinextras"]
 	depends = qtbase
 	recommends = qtdeclarative qtmultimedia
 	path = qtwinextras
 	url = ../qtwinextras.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtandroidextras"]
 	depends = qtbase
 	path = qtandroidextras
 	url = ../qtandroidextras.git
 	branch = dev
 	status = addon
-[submodule "qtenginio"]
-	depends = qtdeclarative
-	path = qtenginio
-	url = ../qtenginio.git
-	branch = dev
-	status = ignore
 [submodule "qtwebsockets"]
 	depends = qtbase
 	recommends = qtdeclarative
@@ -219,56 +202,56 @@
 	path = qtwebchannel
 	url = ../qtwebchannel.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtwebengine"]
-	depends = qtquickcontrols qtwebchannel
-	recommends = qtlocation qttools
+	depends = qtdeclarative
+	recommends = qtquickcontrols qtquickcontrols2 qtlocation qtwebchannel qttools
 	path = qtwebengine
 	url = ../qtwebengine.git
 	branch = dev
-	status = addon
+	status = ignore
 	priority = 10
 [submodule "qtcanvas3d"]
 	depends = qtdeclarative
 	path = qtcanvas3d
 	url = ../qtcanvas3d.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtwebview"]
 	depends = qtdeclarative
 	recommends = qtwebengine
 	path = qtwebview
 	url = ../qtwebview.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtquickcontrols2"]
-	depends = qtgraphicaleffects
-	recommends = qtimageformats
+	depends = qtdeclarative
+	recommends = qtimageformats qtgraphicaleffects
 	path = qtquickcontrols2
 	url = ../qtquickcontrols2.git
 	branch = dev
-	status = addon
+	status = essential
 [submodule "qtpurchasing"]
-	depends = qtbase qtandroidextras
-	recommends = qtdeclarative
+	depends = qtbase
+	recommends = qtdeclarative qtandroidextras
 	path = qtpurchasing
 	url = ../qtpurchasing.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtcharts"]
 	depends = qtbase
 	recommends = qtdeclarative qtmultimedia
 	path = qtcharts
 	url = ../qtcharts.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtdatavis3d"]
 	depends = qtbase
 	recommends = qtdeclarative qtmultimedia
 	path = qtdatavis3d
 	url = ../qtdatavis3d.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtvirtualkeyboard"]
 	depends = qtbase qtdeclarative qtsvg
 	recommends = qtmultimedia qtquickcontrols
@@ -282,23 +265,22 @@
 	path = qtgamepad
 	url = ../qtgamepad.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtscxml"]
 	depends = qtbase qtdeclarative
 	path = qtscxml
 	url = ../qtscxml.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtspeech"]
 	depends = qtbase
 	recommends = qtdeclarative qtmultimedia
 	path = qtspeech
 	url = ../qtspeech.git
 	branch = dev
-	status = addon
+	status = ignore
 [submodule "qtnetworkauth"]
 	depends = qtbase
-	recommends = qtwebview
 	path = qtnetworkauth
 	url = ../qtnetworkauth.git
 	branch = dev
@@ -309,17 +291,41 @@
 	path = qtremoteobjects
 	url = ../qtremoteobjects.git
 	branch = dev
-	status = preview
+	status = ignore
 [submodule "qtwebglplugin"]
 	depends = qtbase qtwebsockets
 	recommends = qtdeclarative
 	path = qtwebglplugin
 	url = ../qtwebglplugin.git
 	branch = dev
-	status = preview
-[submodule "qtopcua"]
-	depends = qtbase
-	path = qtopcua
-	url = ../qtopcua.git
+	status = ignore
+[submodule "qtlottie"]
+	depends = qtbase qtdeclarative
+	path = qtlottie
+	url = ../qtlottie.git
 	branch = dev
-	status = preview
+	status = ignore
+[submodule "qtquicktimeline"]
+	depends = qtbase qtdeclarative
+	path = qtquicktimeline
+	url = ../qtquicktimeline
+	branch = dev
+	status = addon
+[submodule "qtquick3d"]
+	depends = qtbase qtdeclarative qtshadertools
+	path = qtquick3d
+	url = ../qtquick3d.git
+	branch = dev
+	status = addon
+[submodule "qtshadertools"]
+	depends = qtbase
+	path = qtshadertools
+	url = ../qtshadertools.git
+	branch = dev
+	status = addon
+[submodule "qt5compat"]
+	depends = qtbase
+	path = qt5compat
+	url = ../qt5compat.git
+	branch = dev
+	status = deprecated
